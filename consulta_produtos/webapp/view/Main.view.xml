@@ -1,0 +1,26 @@
+<mvc:View controllerName="consultaprodutos.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+       
+          <FlexBox justifyContent="Center">
+            <Input id="inpBuscar"/>
+            <Button text="Buscar" press="onPressBusca"/>            
+          </FlexBox>
+ 
+          <VBox id="productBox" visible="true">      
+
+            <ObjectHeader title="Guaraná" number="1L"> 
+
+              <attributes>
+                 <ObjectAttribute title="Código de Barras"  text="7898920238060"/>
+                 <ObjectAttribute title="Marca"  text="Antartica"/>
+                 
+              </attributes>
+           </ObjectHeader>
+
+          </VBox>
+        </content>
+    </Page>
+</mvc:View>
