@@ -11,14 +11,29 @@
  
           <VBox id="productBox" visible="true">      
 
-            <ObjectHeader title="Guaraná" number="1L"> 
+            <ObjectHeader 
+              title="{ModeloProduto>/product/product_name}"
+              number="{ModeloProduto>/product/quantity}"> 
 
               <attributes>
-                 <ObjectAttribute title="Código de Barras"  text="7898920238060"/>
-                 <ObjectAttribute title="Marca"  text="Antartica"/>
+                 <ObjectAttribute title="Código de Barras"  text="{ModeloProduto>/code}" />
+                 <ObjectAttribute title="Marca"  text="{ModeloProduto>/product/brands}" />
                  
               </attributes>
            </ObjectHeader>
+
+           <Panel headerText="Informações" >
+            <content>
+              <HBox >
+                <Image src="{ModeloProduto>/product/image_front_url}" width="5em" press="onClickImage"/>
+                  <VBox>
+                    <ObjectAttribute title="Categoria"  text="{ModeloProduto>/product/categories}" />
+                    <ObjectAttribute title="Avisos"  text="{ModeloProduto>/product/ecoscore_extended_data/impact/warnings}" />
+                    <ObjectAttribute title="Fabricado em"  text="{ModeloProduto>/product/manufacturing_places}" />
+                  </VBox>
+              </HBox>
+            </content>
+           </Panel>
 
           </VBox>
         </content>
